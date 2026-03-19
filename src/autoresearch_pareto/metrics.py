@@ -1,7 +1,7 @@
 """Metric configuration for multi-objective optimization."""
 
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 
 @dataclass
@@ -10,6 +10,9 @@ class MetricConfig:
     direction: str = "minimize"  # "minimize" or "maximize"
     weight: float = 1.0
     unit: Optional[str] = None
+    type: str = "numeric"  # "numeric" or "categorical"
+    categories: Optional[List[str]] = None  # ordered list for categorical (worst to best)
+    constraints: Optional[Dict] = field(default=None)  # {"min_value": ..., "max_value": ...}
 
 
 class MetricSet:

@@ -1,10 +1,25 @@
 """Pareto frontier computation with efficient dominance checking."""
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 
 from autoresearch_pareto.metrics import MetricSet
+
+
+def check_feasible(point: Dict[str, Any], metric_set: MetricSet) -> bool:
+    """Check if a point satisfies all metric constraints."""
+    for m in metric_set.metrics:
+        if m.constraints is None:
+            continue
+        v = point[m.name]
+        if m.type == "categorical":
+            continue  # constraints don't apply to categorical
+        if "min_value" in m.constraints and v < m.constraints["min_value"]:
+            return False
+        if "max_value" in m.constraints and v > m.constraints["max_value"]:
+            return False
+    return True
 
 
 class ParetoFrontier:
@@ -17,6 +32,8 @@ class ParetoFrontier:
         values = []
         for m in self.metric_set.metrics:
             v = point[m.name]
+            if m.type == "categorical" and m.categories:
+                v = m.categories.index(v)
             if m.direction == "maximize":
                 v = -v
             values.append(v)
@@ -27,7 +44,11 @@ class ParetoFrontier:
         return bool(np.all(a <= b) and np.any(a < b))
 
     def add_point(self, point: Dict[str, Any]) -> bool:
-        """Add a point. Returns True if it's on the new frontier."""
+        """Add a point. Returns True if it's on the new frontier.
+        Raises ValueError if point violates constraints."""
+        if not check_feasible(point, self.metric_set):
+            raise ValueError(f"Point violates constraints: {point}")
+
         new_arr = self._to_minimize_array(point)
         # Check if dominated by any existing frontier point
         new_frontier = []
