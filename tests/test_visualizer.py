@@ -4,9 +4,9 @@ import pytest
 import matplotlib
 matplotlib.use("Agg")
 
-from autoresearch_pareto.visualizer import plot_frontier_2d, plot_frontier_3d, plot_frontier_evolution
-from autoresearch_pareto.frontier import ParetoFrontier
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
+from pareto_frontier.visualizer import plot_frontier_2d, plot_frontier_3d, plot_frontier_evolution
+from pareto_frontier.frontier import ParetoFrontier
+from pareto_frontier.metrics import MetricConfig, MetricSet
 
 
 @pytest.fixture

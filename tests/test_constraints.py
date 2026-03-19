@@ -1,8 +1,8 @@
 """Tests for constraint handling in MetricConfig and ParetoFrontier."""
 
 import pytest
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.frontier import ParetoFrontier, check_feasible
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.frontier import ParetoFrontier, check_feasible
 
 
 @pytest.fixture

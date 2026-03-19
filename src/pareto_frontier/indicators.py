@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 import numpy as np
 
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.metrics import MetricSet
 
 
 def _points_to_minimize_array(points: List[Dict[str, Any]], metric_set: MetricSet) -> np.ndarray:

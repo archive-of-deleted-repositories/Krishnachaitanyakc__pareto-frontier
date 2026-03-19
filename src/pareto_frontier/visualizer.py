@@ -7,8 +7,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from autoresearch_pareto.frontier import ParetoFrontier
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.frontier import ParetoFrontier
+from pareto_frontier.metrics import MetricSet
 
 
 def plot_frontier_2d(

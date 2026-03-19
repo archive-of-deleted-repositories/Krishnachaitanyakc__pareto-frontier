@@ -14,6 +14,6 @@
 
 ## Long-term
 - Real-time frontier updates via streaming
-- Integration with autoresearch-wandb for metric extraction
+- Integration with wandb-utils for metric extraction
 - Frontier comparison across different experiment runs
 - Automated tradeoff analysis with LLM explanations

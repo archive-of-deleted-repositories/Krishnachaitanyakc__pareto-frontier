@@ -1,4 +1,4 @@
-"""CLI for autoresearch-pareto."""
+"""CLI for pareto-frontier."""
 
 import json
 import time
@@ -6,9 +6,9 @@ from pathlib import Path
 
 import click
 
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.tracker import ParetoTracker
-from autoresearch_pareto.scalarizer import weighted_sum, tchebycheff
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.tracker import ParetoTracker
+from pareto_frontier.scalarizer import weighted_sum, tchebycheff
 
 
 DEFAULT_STORAGE = "experiments.jsonl"
@@ -115,7 +115,7 @@ def export_cmd(fmt, output, storage):
 @click.option("--ref", "-r", multiple=True, help="Reference point in key=value format")
 def compare(file_a, file_b, ref):
     """Compare two Pareto frontiers from JSONL files."""
-    from autoresearch_pareto.indicators import compare_frontiers
+    from pareto_frontier.indicators import compare_frontiers
 
     ref_point = _parse_metrics(ref) if ref else None
 
@@ -209,7 +209,7 @@ def watch(results_tsv, storage, interval):
 @click.option("--storage", default=DEFAULT_STORAGE, help="JSONL storage path")
 def suggest(target, param, storage):
     """Suggest next experiment using Bayesian optimization."""
-    from autoresearch_pareto.bayesian import suggest_next
+    from pareto_frontier.bayesian import suggest_next
 
     tracker = _make_tracker(storage=storage)
 
@@ -239,7 +239,7 @@ def suggest(target, param, storage):
 @click.option("--model", default="claude-sonnet-4-20250514", help="Claude model to use")
 def explain(storage, model):
     """Get LLM-powered tradeoff analysis of the frontier."""
-    from autoresearch_pareto.llm_analysis import explain_tradeoffs
+    from pareto_frontier.llm_analysis import explain_tradeoffs
 
     tracker = _make_tracker(storage=storage)
     frontier_points = tracker.frontier.get_frontier()
@@ -258,7 +258,7 @@ def explain(storage, model):
 @click.option("--storage", default=DEFAULT_STORAGE, help="JSONL storage path")
 def import_wandb(directory, storage):
     """Import experiments from W&B run JSON files."""
-    from autoresearch_pareto.wandb_import import import_wandb_directory
+    from pareto_frontier.wandb_import import import_wandb_directory
 
     tracker = _make_tracker(storage=storage)
     count = import_wandb_directory(directory, tracker)

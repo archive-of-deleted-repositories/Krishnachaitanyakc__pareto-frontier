@@ -1,8 +1,8 @@
 """Tests for hypervolume indicator, crowding distance, and frontier comparison."""
 
 import pytest
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.indicators import (
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.indicators import (
     compute_hypervolume,
     compute_crowding_distance,
     compare_frontiers,

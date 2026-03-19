@@ -1,6 +1,6 @@
 import pytest
-from autoresearch_pareto.frontier import ParetoFrontier
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
+from pareto_frontier.frontier import ParetoFrontier
+from pareto_frontier.metrics import MetricConfig, MetricSet
 
 
 @pytest.fixture

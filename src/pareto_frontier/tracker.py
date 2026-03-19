@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from autoresearch_pareto.frontier import ParetoFrontier
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.frontier import ParetoFrontier
+from pareto_frontier.metrics import MetricSet
 
 
 class ParetoTracker:

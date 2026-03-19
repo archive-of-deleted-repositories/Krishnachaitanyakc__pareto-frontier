@@ -2,7 +2,7 @@
 
 from typing import Dict, Optional
 
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.metrics import MetricSet
 
 
 def _normalize_value(value: float, direction: str) -> float:

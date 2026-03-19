@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from autoresearch_pareto.tracker import ParetoTracker
+from pareto_frontier.tracker import ParetoTracker
 
 
 def parse_wandb_run(run_path: str, metric_names: List[str]) -> Optional[Dict[str, Any]]:

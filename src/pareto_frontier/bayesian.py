@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.metrics import MetricSet
 
 
 def _expected_improvement(

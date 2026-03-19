@@ -1,4 +1,4 @@
-# autoresearch-pareto
+# pareto-frontier
 
 Multi-objective optimization tracking Pareto frontiers for experiment management. Track experiments with arbitrary metrics, efficiently compute Pareto frontiers, and visualize tradeoffs.
 
@@ -23,26 +23,26 @@ pip install -e .
 
 ```bash
 # Track an experiment with multiple metrics
-autoresearch-pareto track --commit abc123 --metric val_bpb=0.95 --metric vram_gb=12.5
+pareto-frontier track --commit abc123 --metric val_bpb=0.95 --metric vram_gb=12.5
 
 # Show current Pareto frontier
-autoresearch-pareto frontier
+pareto-frontier frontier
 
 # Generate visualization
-autoresearch-pareto plot --output frontier.png
+pareto-frontier plot --output frontier.png
 
 # Check if a point is dominated
-autoresearch-pareto dominated --metric val_bpb=0.90 --metric vram_gb=14.0
+pareto-frontier dominated --metric val_bpb=0.90 --metric vram_gb=14.0
 
 # Rank experiments by scalarization
-autoresearch-pareto rank --method weighted_sum
+pareto-frontier rank --method weighted_sum
 ```
 
 ### Python API
 
 ```python
-from autoresearch_pareto.frontier import ParetoFrontier
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
+from pareto_frontier.frontier import ParetoFrontier
+from pareto_frontier.metrics import MetricConfig, MetricSet
 
 metrics = MetricSet([
     MetricConfig("val_bpb", direction="minimize"),

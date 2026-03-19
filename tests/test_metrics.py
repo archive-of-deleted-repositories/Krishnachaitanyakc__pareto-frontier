@@ -1,5 +1,5 @@
 import pytest
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
+from pareto_frontier.metrics import MetricConfig, MetricSet
 
 
 def test_metric_config_creation():

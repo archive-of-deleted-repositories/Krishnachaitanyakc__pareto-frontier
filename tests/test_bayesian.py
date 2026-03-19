@@ -1,8 +1,8 @@
 """Tests for Bayesian optimization suggest_next."""
 
 import pytest
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.bayesian import suggest_next
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.bayesian import suggest_next
 
 
 @pytest.fixture

@@ -5,8 +5,8 @@ import json
 import pytest
 from pathlib import Path
 
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.tracker import ParetoTracker
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.tracker import ParetoTracker
 
 
 @pytest.fixture

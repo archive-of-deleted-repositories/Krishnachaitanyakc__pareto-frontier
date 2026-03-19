@@ -2,7 +2,7 @@
 
 from typing import Any, Dict, List
 
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.metrics import MetricSet
 
 
 def explain_tradeoffs(

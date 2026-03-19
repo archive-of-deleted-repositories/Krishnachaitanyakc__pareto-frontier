@@ -4,9 +4,9 @@ import json
 import pytest
 from pathlib import Path
 
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
-from autoresearch_pareto.tracker import ParetoTracker
-from autoresearch_pareto.wandb_import import parse_wandb_run, import_wandb_directory
+from pareto_frontier.metrics import MetricConfig, MetricSet
+from pareto_frontier.tracker import ParetoTracker
+from pareto_frontier.wandb_import import parse_wandb_run, import_wandb_directory
 
 
 @pytest.fixture

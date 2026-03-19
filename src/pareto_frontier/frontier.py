@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 import numpy as np
 
-from autoresearch_pareto.metrics import MetricSet
+from pareto_frontier.metrics import MetricSet
 
 
 def check_feasible(point: Dict[str, Any], metric_set: MetricSet) -> bool:

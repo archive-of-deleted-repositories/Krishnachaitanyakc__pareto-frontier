@@ -1,6 +1,6 @@
 import pytest
-from autoresearch_pareto.scalarizer import weighted_sum, tchebycheff, achievement_scalarizing
-from autoresearch_pareto.metrics import MetricConfig, MetricSet
+from pareto_frontier.scalarizer import weighted_sum, tchebycheff, achievement_scalarizing
+from pareto_frontier.metrics import MetricConfig, MetricSet
 
 
 @pytest.fixture

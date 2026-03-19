@@ -3,7 +3,7 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "autoresearch-pareto"
+name = "pareto-frontier"
 version = "0.1.0"
 description = "Multi-objective optimization tracking Pareto frontiers"
 readme = "README.md"
@@ -25,7 +25,7 @@ llm = [
 ]
 
 [project.scripts]
-autoresearch-pareto = "autoresearch_pareto.cli:cli"
+pareto-frontier = "pareto_frontier.cli:cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
